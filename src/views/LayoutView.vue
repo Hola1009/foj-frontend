@@ -3,7 +3,7 @@
     <el-header class="el-header">
       <el-dropdown>
         <span class="el-dropdown__box">
-          <div><strong>当前用户：</strong>{{ loginUser.nickName }}</div>
+          <div><strong>当前用户：</strong>{{ loginUser.username }}</div>
           <el-icon>
             <ArrowDownBold />
           </el-icon>

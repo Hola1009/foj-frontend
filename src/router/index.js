@@ -5,10 +5,15 @@ import LayoutView from '@/views/LayoutView.vue'
 import UserView from '@/views/UserView.vue'
 import QuestionView from '@/views/QuestionView.vue'
 import ExamView from '@/views/ExamView.vue'
+import { getToken } from '@/utils/cookie'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/',
+      redirect: '/foj/user/login',
+    },
     {
       path: '/foj/user/login',
       name: 'login',
@@ -42,6 +47,24 @@ const router = createRouter({
       ],
     },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  if (getToken()) {
+    //已经登陆过
+    /* has token*/
+    if (to.path === '/foj/user/login') {
+      next({ path: '/foj/layout/question' })
+    } else {
+      next()
+    }
+  } else {
+    if (to.path !== '/foj/user/login') {
+      next({ path: '/foj/user/login' })
+    } else {
+      next()
+    }
+  }
 })
 
 export default router

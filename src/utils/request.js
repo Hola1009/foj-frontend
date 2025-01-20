@@ -34,7 +34,7 @@ service.interceptors.response.use(
       // eslint-disable-next-line no-undef
       ElMessage.error(message)
       removeToken()
-      router.push('/foj/login')
+      router.push('/foj/user/login')
       return Promise.reject(new Error(message))
     } else if (code !== 1000) {
       // 其他异常

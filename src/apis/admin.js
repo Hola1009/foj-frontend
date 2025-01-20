@@ -1,23 +1,23 @@
 import service from '@/utils/request'
 
-export function loginService(userAccount, password) {
+export function loginService(adminAccount, password) {
   return service({
-    url: '/user/login',
+    url: '/admin/login',
     method: 'post',
-    data: { userAccount, password },
+    data: { adminAccount, password },
   })
 }
 
 export function logoutService() {
   return service({
-    url: '/user/logout',
+    url: '/admin/logout',
     method: 'delete',
   })
 }
 
 export function getUserinfoService() {
   return service({
-    url: '/user/info',
+    url: '/admin/info',
     method: 'get',
   })
 }

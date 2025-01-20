@@ -14,3 +14,10 @@ export function logoutService() {
     method: 'delete',
   })
 }
+
+export function getUserinfoService() {
+  return service({
+    url: '/user/info',
+    method: 'get',
+  })
+}

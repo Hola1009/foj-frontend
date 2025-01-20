@@ -55,16 +55,16 @@ import {
 } from "@element-plus/icons-vue";
 import { reactive } from "vue";
 import router from "@/router";
-import { /* getUserInfoService, */ logoutService } from "@/apis/admin";
+import { getUserinfoService, logoutService } from "@/apis/admin";
 import { removeToken } from "@/utils/cookie";
 
 const loginUser = reactive({
-  nickName: "",
+  username: "",
 });
 
 async function getUserInfo() {
-  // const userInfo = await getUserInfoService();
-  // loginUser.nickName = userInfo.data.nickName;
+  const userInfo = await getUserinfoService();
+  loginUser.username = userInfo.data.username;
 }
 getUserInfo();
 

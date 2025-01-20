@@ -1,11 +1,26 @@
 import axios from 'axios'
 import router from '@/router'
 import { removeToken } from './cookie'
+import { getToken } from './cookie'
 
 const service = axios.create({
   baseURL: '/dev-api',
   timeout: 5000,
 })
+
+//请求拦截器
+service.interceptors.request.use(
+  (config) => {
+    if (getToken()) {
+      config.headers['Authorization'] = 'Bearer ' + getToken()
+    }
+    return config
+  },
+  (error) => {
+    console.log(error)
+    Promise.reject(error)
+  },
+)
 
 //响应拦截器
 service.interceptors.response.use(

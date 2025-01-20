@@ -80,7 +80,7 @@ async function logout() {
   // }
   await logoutService();
   removeToken();
-  router.push("/oj/login");
+  router.push("/foj/user/login");
 }
 </script>
 

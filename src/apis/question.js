@@ -34,8 +34,7 @@ export function editQuestionService(params = {}) {
 
 export function delQuestionService(questionId) {
   return service({
-    url: '/question/delete',
+    url: `/question/${questionId}`,
     method: 'delete',
-    params: { questionId },
   })
 }

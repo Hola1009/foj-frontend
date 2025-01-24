@@ -7,6 +7,7 @@ const service = axios.create({
   baseURL: '/dev-api',
   timeout: 5000,
 })
+service.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
 
 //请求拦截器
 service.interceptors.request.use(

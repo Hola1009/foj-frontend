@@ -29,7 +29,7 @@
         <div v-if="row.difficulty === 3" style="color: #fd4c40">困难</div>
       </template>
     </el-table-column>
-    <el-table-column prop="createName" label="创建人" width="140px" />
+    <el-table-column prop="creatorName" label="创建人" width="140px" />
     <el-table-column prop="createTime" label="创建时间" width="180px" />
     <el-table-column label="操作" width="100px" fixed="right">
       <template #default="{ row }">

@@ -27,6 +27,7 @@ const router = createRouter({
     {
       path: '/foj/layout',
       name: 'layout',
+      redirect: '/foj/layout/question',
       component: LayoutView,
       children: [
         {

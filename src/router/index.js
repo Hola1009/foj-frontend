@@ -6,6 +6,7 @@ import UserView from '@/views/UserView.vue'
 import QuestionView from '@/views/QuestionView.vue'
 import ExamView from '@/views/ExamView.vue'
 import { getToken } from '@/utils/cookie'
+import UpdateExam from '@/views/UpdateExam.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
           path: '/foj/layout/Exam',
           name: 'exam',
           component: ExamView,
+        },
+        {
+          path: '/foj/layout/UpdateExam',
+          name: 'updateExam',
+          component: UpdateExam,
         },
       ],
     },

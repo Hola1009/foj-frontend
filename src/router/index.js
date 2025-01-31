@@ -21,11 +21,6 @@ const router = createRouter({
       component: LoginView,
     },
     {
-      path: '/foj/system',
-      name: 'system',
-      component: SystemView,
-    },
-    {
       path: '/foj/layout',
       name: 'layout',
       redirect: '/foj/layout/question',

@@ -46,7 +46,7 @@ async function loginFun() {
     console.log("loginResult:", loginResult);
     setToken(loginResult.data);
     // 跳转到管理页面
-    router.push("/foj/system");
+    router.push("/foj/layout");
   } catch (error) {
     console.log("error:", error);
   }
